@@ -1,0 +1,302 @@
+@font-face {
+  font-family: GlacialIndifference;
+  src: url("/fonts/GlacialIndifference-Regular.otf");
+}
+
+@font-face {
+  font-family: GlacialIndifferenceBold;
+  src: url("/fonts/GlacialIndifference-Bold.otf");
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-anchor: none;
+}
+
+body {
+  height: 100vh;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  font-family: GlacialIndifference, sans-serif;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+#home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #0000, #210167f1);
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  animation: mist 10s ease infinite;
+}
+
+@keyframes mist {
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+header {
+  overflow: hidden;
+  font-family: GlacialIndifferenceBold, sans-serif;
+}
+
+header ul {
+  margin-top: 1rem;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header ul li {
+  display: inline;
+  margin: 0 10px;
+  transition: all .2s ease;
+}
+
+header ul li:hover {
+  transform: scale(1.05);
+}
+
+header ul li::before {
+  content: '<';
+  color: #333;
+}
+
+header ul li::after {
+  content: '/>';
+  color: #333;
+}
+
+#hero {
+  height: 95vh;
+  display: grid;
+  place-items: center;
+}
+
+#logo path {
+  fill: none;
+  stroke: #9F52FF;
+  stroke-linejoin: round;
+  stroke-width: 0.2rem;
+}
+
+#logo .a {
+  stroke-dasharray: 3958;
+  stroke-dashoffset: 3958;
+  animation: outline 3.5s cubic-bezier(0.17, 0.67, 1, 1) forwards;
+}
+
+#logo .b {
+  stroke-dasharray: 4656;
+  stroke-dashoffset: 4656;
+  animation: outline 3.5s cubic-bezier(0.17, 0.67, 1, 1) forwards;
+}
+
+@keyframes outline {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#hero .container {
+  display: inline-block;
+}
+
+#name {
+  cursor: default;
+  position: relative;
+  width: 100%;
+  font-family: GlacialIndifference, sans-serif;
+  font-size: 6rem;
+  letter-spacing: 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15rem solid;
+  animation:
+    appear 1.3s,
+    typing 1.2s steps(5) 1.3s,
+    caret 0.65s step-end 5 forwards;
+}
+
+#description {
+  font-size: 1.5rem;
+  color: #ffffff55;
+}
+
+@keyframes appear {
+
+  0%,
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: transparent;
+  }
+}
+
+#projects {
+  display: grid;
+  place-items: center;
+  margin-top: 1.2rem;
+}
+
+#projects h2 {
+  margin-bottom: 1.2rem;
+  font-family: GlacialIndifferenceBold;
+}
+
+#projects svg {
+  margin-bottom: 3rem;
+}
+
+#kotlin_logo path {
+  fill: none;
+  stroke: #7F52FF;
+  stroke-linejoin: round;
+  stroke-width: 0.06rem;
+}
+
+#rust_logo path {
+  fill: none;
+  stroke: #7F52FF;
+  stroke-linejoin: round;
+  stroke-width: 0.03rem;
+}
+
+.project {
+  margin-bottom: 5rem;
+  border-radius: 50px;
+  padding: 3rem;
+  width: 60%;
+  min-height: 20rem;
+  height: 20rem;
+  border: solid 2px transparent;
+  border-radius: 2rem;
+  background-image: linear-gradient(#131313, #111111), radial-gradient(circle at top left, #8E2DE2, #4A00E0);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 20px 10px rgba(142, 45, 226, 0.15);
+}
+
+.project_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project_name {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.project_name svg {
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  position: absolute;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.project_name svg:hover {
+  transform: scale(1.05);
+}
+
+.project_description {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #ffffff55;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  color: #777;
+}
+
+footer a {
+  position: relative;
+  padding-top: 0.5rem;
+  color: #ccc;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(142, 45, 226, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(142, 45, 226, 0.2);
+}
