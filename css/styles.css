@@ -85,6 +85,13 @@ a {
 header {
   overflow: hidden;
   font-family: GlacialIndifferenceBold, sans-serif;
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    font-size: 0.8rem;
+  }
 }
 
 header ul {
@@ -98,7 +105,7 @@ header ul {
 header ul li {
   display: inline;
   margin: 0 10px;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 header ul li:hover {
@@ -119,6 +126,17 @@ header ul li::after {
   height: 95vh;
   display: grid;
   place-items: center;
+}
+
+#logo svg {
+  width: 15rem;
+  transition: all 0.2s ease;
+}
+
+@media only screen and (max-width: 600px) {
+  #logo svg {
+    width: 12rem;
+  }
 }
 
 #logo path {
@@ -168,7 +186,7 @@ header ul li::after {
 
 #description {
   font-size: 1.5rem;
-  color: #ffffff55;
+  color: #888;
 }
 
 @keyframes appear {
@@ -267,7 +285,7 @@ header ul li::after {
 .project_description {
   margin-bottom: 10px;
   font-size: 1.1rem;
-  color: #ffffff55;
+  color: #888;
 }
 
 footer {
