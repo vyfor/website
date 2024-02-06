@@ -11,8 +11,9 @@
 :root {
   scroll-behavior: smooth;
 
-  --violet: #210167;
+  --violet: #1f025d;
   --deep-purple: #6528F7;
+  --deeper-purple: #7940ff;
   --purple: #A076F9;
   --lavendar: #D7BBF5;
   --lilac: #EDE4FF;
@@ -64,7 +65,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, #0000, #210167f1);
+  background: linear-gradient(to top, #0000, var(--violet));
   opacity: 0.5;
   mix-blend-mode: overlay;
   pointer-events: none;
@@ -147,7 +148,7 @@ header ul li::after {
 
 #logo path {
   fill: none;
-  stroke: #9F52FF;
+  stroke: var(--purple);
   stroke-linejoin: round;
   stroke-width: 0.2rem;
 }
@@ -177,7 +178,7 @@ header ul li::after {
 #name {
   cursor: default;
   position: relative;
-  width: auto;
+  width: 100%;
   font-family: GlacialIndifference, sans-serif;
   font-size: 6rem;
   letter-spacing: 0.15rem;
@@ -192,7 +193,7 @@ header ul li::after {
 
 #description {
   font-size: 1.5rem;
-  color: #888;
+  color: #999;
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -229,7 +230,7 @@ header ul li::after {
 }
 
 #projects h2 {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   font-family: GlacialIndifferenceBold;
 }
 
@@ -239,20 +240,20 @@ header ul li::after {
 
 #kotlin_logo path {
   fill: none;
-  stroke: #7F52FF;
+  stroke: var(--deeper-purple);
   stroke-linejoin: round;
   stroke-width: 0.06rem;
 }
 
 #rust_logo path {
   fill: none;
-  stroke: #7F52FF;
+  stroke: var(--deeper-purple);
   stroke-linejoin: round;
   stroke-width: 0.03rem;
 }
 
 .project {
-  margin-bottom: 5rem;
+  margin-bottom: 8rem;
   border-radius: 50px;
   padding: 3rem;
   width: 60%;
@@ -260,10 +261,10 @@ header ul li::after {
   height: 21rem;
   border: solid 2px transparent;
   border-radius: 2rem;
-  background-image: linear-gradient(#131313, #111111), radial-gradient(circle at top left, #8E2DE2, #4A00E0);
+  background-image: linear-gradient(#131313, #111111), radial-gradient(circle at top left, var(--lavendar), var(--purple));
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  box-shadow: 0 0 20px 10px rgba(142, 45, 226, 0.15);
+  box-shadow: 0 0 20px 15px #b25aff15;
 }
 
 .project_container {
@@ -281,15 +282,15 @@ header ul li::after {
 }
 
 .project_name svg {
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
   position: absolute;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .project_name svg:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .project_description {
@@ -322,9 +323,9 @@ footer a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(142, 45, 226, 0.2);
+  background: #8e2de233;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(142, 45, 226, 0.2);
+  background: #8e2de233;
 }
