@@ -121,26 +121,6 @@
     <span>Made with ❤️ by axeon</span>
     <a href="https://github.com/ReBlast/website" target="_blank">View source code</a>
   </footer>
-
-  <script>
-    let pageLoaded = false;
-
-    window.addEventListener('load', () => {
-      pageLoaded = true;
-    });
-
-    window.addEventListener('hashchange', function () {
-      if (!pageLoaded) {
-        window.scrollTo(0, 0);
-      } else {
-        let elementId = window.location.hash.substring(1);
-        let element = document.getElementById(elementId);
-        if (element) {
-          element.scrollIntoView();
-        }
-      }
-    });
-  </script>
 </body>
 
 </html>
