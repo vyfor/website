@@ -191,6 +191,23 @@ header ul li::after {
     caret 0.65s step-end 5 forwards;
 }
 
+#aka {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  padding-top: 0.5rem;
+  animation: aka_fade_in 3s 3s forwards;
+}
+
+@keyframes aka_fade_in {
+  100% {
+    opacity: 5%;
+  }
+}
+
 #description {
   font-size: 1.5rem;
   color: #999;
@@ -323,9 +340,9 @@ footer a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8e2de233;
+  background: #140e1c;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8e2de233;
+  background: #140e1c;
 }
